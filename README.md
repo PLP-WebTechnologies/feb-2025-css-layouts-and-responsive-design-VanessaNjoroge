@@ -1,26 +1,110 @@
-# CSS Layouts and Responsive Design
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-## Objectives
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+}
 
-Implement Flexbox and Grid for layout design.
-Make the webpage responsive using media queries.
-Ensure proper alignment and spacing.
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-## Instructions
+.navbar ul li {
+    margin: 0 20px;
+}
 
-- use Flexbox or CSS Grid.
-- Add a navigation bar and structure the content.
-- Use media queries to adjust layout for mobile, tablet, and desktop.
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
 
->[!NOTE]
->  - Include at least:
->  - navigation bar
->  - media queries
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
 
-# Tasks
+/* Left Section */
+.left {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-right: 20px;
+}
 
-- Apply Flexbox or Grid for layout.
-- Make the page responsive.
-- Test across different screen sizes.
+/* Right Section */
+.right {
+    flex: 2;
+    padding: 20px;
+    background-color: #e2e2e2;
+}
 
-Happy Coding! 💻✨
+/* Grid Layout for Right Section */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+  .left, .right {
+        flex: 1;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+  .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+  .navbar ul {
+        flex-direction: column;
+    }
+
+  .navbar ul li {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar ul {
+        padding: 0;
+    }
+}
+
